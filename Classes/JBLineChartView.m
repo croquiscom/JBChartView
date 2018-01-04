@@ -106,7 +106,7 @@ static UIColor *kJBLineChartViewDefaultGradientSelectionFillEndColor = nil;
 - (void)setSelectedLineIndex:(NSInteger)selectedLineIndex animated:(BOOL)animated;
 
 // Callback helpers
-- (void)fireCallback:(void (^)())callback;
+- (void)fireCallback:(void (^)(void))callback;
 
 // View helpers
 - (JBLineLayer *)lineLayerForLineIndex:(NSUInteger)lineIndex;
@@ -797,7 +797,7 @@ static UIColor *kJBLineChartViewDefaultGradientSelectionFillEndColor = nil;
 
 #pragma mark - Setters
 
-- (void)setState:(JBChartViewState)state animated:(BOOL)animated force:(BOOL)force callback:(void (^)())callback
+- (void)setState:(JBChartViewState)state animated:(BOOL)animated force:(BOOL)force callback:(void (^)(void))callback
 {
     [super setState:state animated:animated force:force callback:callback];
     
@@ -854,7 +854,7 @@ static UIColor *kJBLineChartViewDefaultGradientSelectionFillEndColor = nil;
     }
 }
 
-- (void)setState:(JBChartViewState)state animated:(BOOL)animated callback:(void (^)())callback
+- (void)setState:(JBChartViewState)state animated:(BOOL)animated callback:(void (^)(void))callback
 {
     [self setState:state animated:animated force:NO callback:callback];
 }
@@ -1587,7 +1587,7 @@ static UIColor *kJBLineChartViewDefaultGradientSelectionFillEndColor = nil;
 
 #pragma mark - Callback Helpers
 
-- (void)fireCallback:(void (^)())callback
+- (void)fireCallback:(void (^)(void))callback
 {
     dispatch_block_t callbackCopy = [callback copy];
 
