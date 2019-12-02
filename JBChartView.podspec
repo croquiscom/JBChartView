@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 	:tag => "v3.0.13"
   }
 
-  s.platform     = :ios, '6.0'
-  s.source_files = 'Classes/**/*.{h,m}'
+  s.platform     = :ios, '11.0'
+  s.source_files = 'ChartView/**/*.{h,m}'
   s.requires_arc = true
 end
